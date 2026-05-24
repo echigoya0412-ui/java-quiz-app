@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Java SE 認定試験対策 - 全120問 解答・解説付き練習問題アプリ">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Java Quiz - 練習問題集</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=202605241748">
+</head>
+<body>
+    <div class="app" id="app">
+
+        <!-- ===== HOME SCREEN ===== -->
+        <div id="screen-home" class="screen active">
+            <header class="screen-header home-header">
+                <div class="home-greeting">
+                    <span class="greeting-emoji">☕</span>
+                    <div>
+                        <p class="greeting-sub">Java SE 認定試験対策</p>
+                        <h1 class="greeting-main">練習問題集</h1>
+                    </div>
+                </div>
+            </header>
+
+            <div class="screen-body">
+                <!-- Progress Overview Card -->
+                <div class="progress-overview-card" id="home-progress-card">
+                    <div class="progress-ring-wrap">
+                        <svg class="progress-ring" viewBox="0 0 120 120">
+                            <circle class="progress-ring-bg" cx="60" cy="60" r="52" />
+                            <circle class="progress-ring-fill" id="home-ring-fill" cx="60" cy="60" r="52" />
+                        </svg>
+                        <div class="progress-ring-text">
+                            <span class="ring-percent" id="home-ring-percent">0</span>
+                            <span class="ring-label">%</span>
+                        </div>
+                    </div>
+                    <div class="progress-overview-stats">
+                        <div class="overview-stat">
+                            <span class="overview-stat-value" id="home-total-answered">0</span>
+                            <span class="overview-stat-label">回答済み</span>
+                        </div>
+                        <div class="overview-stat-divider"></div>
+                        <div class="overview-stat">
+                            <span class="overview-stat-value correct-text" id="home-total-correct">0</span>
+                            <span class="overview-stat-label">正解</span>
+                        </div>
+                        <div class="overview-stat-divider"></div>
+                        <div class="overview-stat">
+                            <span class="overview-stat-value" id="home-accuracy">0%</span>
+                            <span class="overview-stat-label">正答率</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section Cards -->
+                <h2 class="section-title">セクション</h2>
+                <div class="section-cards" id="section-cards">
+                    <button class="section-card" data-section="practice1">
+                        <div class="section-card-icon" style="background: linear-gradient(135deg, #3B82F6, #2563EB);">📘</div>
+                        <div class="section-card-info">
+                            <h3>練習問題 Part 1</h3>
+                            <p>基本構文・配列・制御構造</p>
+                        </div>
+                        <div class="section-card-progress">
+                            <div class="mini-progress-bar"><div class="mini-progress-fill" id="prog-practice1"></div></div>
+                            <span class="section-card-count" id="count-practice1">0/30</span>
+                        </div>
+                        <svg class="section-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                    <button class="section-card" data-section="practice2">
+                        <div class="section-card-icon" style="background: linear-gradient(135deg, #10B981, #059669);">📗</div>
+                        <div class="section-card-info">
+                            <h3>練習問題 Part 2</h3>
+                            <p>OOP・継承・ポリモフィズム</p>
+                        </div>
+                        <div class="section-card-progress">
+                            <div class="mini-progress-bar"><div class="mini-progress-fill" id="prog-practice2"></div></div>
+                            <span class="section-card-count" id="count-practice2">0/30</span>
+                        </div>
+                        <svg class="section-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                    <button class="section-card" data-section="mock">
+                        <div class="section-card-icon" style="background: linear-gradient(135deg, #F59E0B, #D97706);">📕</div>
+                        <div class="section-card-info">
+                            <h3>模擬試験 Part 1</h3>
+                            <p>総合問題（前半）</p>
+                        </div>
+                        <div class="section-card-progress">
+                            <div class="mini-progress-bar"><div class="mini-progress-fill" id="prog-mock"></div></div>
+                            <span class="section-card-count" id="count-mock">0/30</span>
+                        </div>
+                        <svg class="section-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                    <button class="section-card" data-section="mock2">
+                        <div class="section-card-icon" style="background: linear-gradient(135deg, #EF4444, #DC2626);">📙</div>
+                        <div class="section-card-info">
+                            <h3>模擬試験 Part 2</h3>
+                            <p>総合問題（後半）</p>
+                        </div>
+                        <div class="section-card-progress">
+                            <div class="mini-progress-bar"><div class="mini-progress-fill" id="prog-mock2"></div></div>
+                            <span class="section-card-count" id="count-mock2">0/30</span>
+                        </div>
+                        <svg class="section-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== SECTION DETAIL SCREEN ===== -->
+        <div id="screen-section" class="screen">
+            <header class="screen-header">
+                <button class="back-btn" id="btn-back-home">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <h1 class="header-title" id="section-title">練習問題 Part 1</h1>
+                <div class="header-spacer"></div>
+            </header>
+            <div class="screen-body">
+                <div class="section-stats-bar">
+                    <div class="section-stat-item">
+                        <span class="section-stat-num" id="sec-answered">0</span>
+                        <span class="section-stat-lbl">回答済</span>
+                    </div>
+                    <div class="section-stat-item">
+                        <span class="section-stat-num correct-text" id="sec-correct">0</span>
+                        <span class="section-stat-lbl">正解</span>
+                    </div>
+                    <div class="section-stat-item">
+                        <span class="section-stat-num wrong-text" id="sec-wrong">0</span>
+                        <span class="section-stat-lbl">不正解</span>
+                    </div>
+                </div>
+                <div class="section-progress-wrap">
+                    <div class="section-progress-bar"><div class="section-progress-fill" id="sec-progress-fill"></div></div>
+                </div>
+                <div class="question-grid" id="question-grid">
+                    <!-- Generated by JS -->
+                </div>
+                <div class="section-actions">
+                    <button class="btn-primary" id="btn-start-section">学習を始める</button>
+                    <button class="btn-secondary" id="btn-reset-section">リセット</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== QUIZ SCREEN ===== -->
+        <div id="screen-quiz" class="screen">
+            <header class="screen-header quiz-header">
+                <button class="back-btn" id="btn-back-section">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <span class="quiz-counter" id="quiz-counter">1 / 30</span>
+                <button class="explain-toggle-btn" id="btn-toggle-explain" style="display:none;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                </button>
+            </header>
+            <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div>
+
+            <div class="screen-body quiz-body">
+                <div class="quiz-card">
+                    <!-- Question Badge -->
+                    <div class="quiz-badge-row">
+                        <span class="quiz-q-number" id="quiz-q-number">問題 1</span>
+                        <span class="quiz-select-badge" id="quiz-select-badge">1つ選択</span>
+                    </div>
+
+                    <!-- Question Text -->
+                    <p class="quiz-text" id="quiz-text"></p>
+
+                    <!-- Code Block -->
+                    <div class="quiz-code-wrap" id="quiz-code-wrap" style="display:none;">
+                        <div class="quiz-code-header"><span>Java</span></div>
+                        <pre class="quiz-code"><code id="quiz-code"></code></pre>
+                    </div>
+
+                    <!-- Command -->
+                    <div class="quiz-command-wrap" id="quiz-cmd-wrap" style="display:none;">
+                        <span class="quiz-cmd-label">実行コマンド</span>
+                        <code class="quiz-cmd" id="quiz-cmd"></code>
+                    </div>
+                </div>
+
+                <!-- Options -->
+                <div class="quiz-options" id="quiz-options">
+                    <!-- Generated by JS -->
+                </div>
+
+                <!-- Result Banner -->
+                <div class="quiz-result" id="quiz-result" style="display:none;">
+                    <div class="quiz-result-icon" id="quiz-result-icon"></div>
+                    <span class="quiz-result-text" id="quiz-result-text"></span>
+                </div>
+
+                <!-- Explanation -->
+                <div class="quiz-explanation" id="quiz-explanation" style="display:none;">
+                    <div class="quiz-explanation-header">
+                        <span>💡 解説</span>
+                    </div>
+                    <p class="quiz-explanation-body" id="quiz-explanation-body"></p>
+                    <p class="quiz-correct-answer" id="quiz-correct-answer"></p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="quiz-actions">
+                    <button class="btn-primary btn-submit" id="btn-submit" disabled>回答する</button>
+                    <div class="quiz-nav-row" id="quiz-nav-row" style="display:none;">
+                        <button class="btn-nav-prev" id="btn-prev">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                            前へ
+                        </button>
+                        <button class="btn-nav-next" id="btn-next">
+                            次へ
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== STATS SCREEN ===== -->
+        <div id="screen-stats" class="screen">
+            <header class="screen-header">
+                <div class="header-spacer"></div>
+                <h1 class="header-title">成績</h1>
+                <div class="header-spacer"></div>
+            </header>
+            <div class="screen-body">
+                <!-- Overall Stats Card -->
+                <div class="stats-overview-card">
+                    <div class="stats-ring-wrap">
+                        <svg class="progress-ring stats-ring" viewBox="0 0 140 140">
+                            <circle class="progress-ring-bg" cx="70" cy="70" r="60" />
+                            <circle class="progress-ring-fill" id="stats-ring-fill" cx="70" cy="70" r="60" />
+                        </svg>
+                        <div class="progress-ring-text">
+                            <span class="ring-percent" id="stats-accuracy">0</span>
+                            <span class="ring-label">%</span>
+                        </div>
+                    </div>
+                    <h3 class="stats-card-title">総合正答率</h3>
+                    <div class="stats-summary-row">
+                        <div class="stats-summary-item">
+                            <span class="stats-summary-num" id="stats-total">0</span>
+                            <span class="stats-summary-lbl">全問題</span>
+                        </div>
+                        <div class="stats-summary-item">
+                            <span class="stats-summary-num" id="stats-answered">0</span>
+                            <span class="stats-summary-lbl">回答済</span>
+                        </div>
+                        <div class="stats-summary-item">
+                            <span class="stats-summary-num correct-text" id="stats-correct">0</span>
+                            <span class="stats-summary-lbl">正解</span>
+                        </div>
+                        <div class="stats-summary-item">
+                            <span class="stats-summary-num wrong-text" id="stats-wrong">0</span>
+                            <span class="stats-summary-lbl">不正解</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Per-Section Stats -->
+                <h2 class="section-title">セクション別</h2>
+                <div class="stats-sections" id="stats-sections">
+                    <!-- Generated by JS -->
+                </div>
+
+                <div class="section-actions">
+                    <button class="btn-secondary btn-reset-all" id="btn-reset-all">全データをリセット</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== BOTTOM NAVIGATION ===== -->
+        <nav class="bottom-nav" id="bottom-nav">
+            <button class="nav-tab active" data-tab="home" id="tab-home">
+                <svg class="nav-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+                <span>ホーム</span>
+            </button>
+            <button class="nav-tab" data-tab="quiz" id="tab-quiz">
+                <svg class="nav-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                <span>学習</span>
+            </button>
+            <button class="nav-tab" data-tab="stats" id="tab-stats">
+                <svg class="nav-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                <span>成績</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="questions_part1.js?v=202605241748"></script>
+    <script src="questions_part2.js?v=202605241748"></script>
+    <script src="questions_part3.js?v=202605241748"></script>
+    <script src="questions_part4.js?v=202605241748"></script>
+    <script src="app.js?v=202605241748"></script>
+</body>
+</html>
