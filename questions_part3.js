@@ -166,7 +166,7 @@ const questionsP3 = [
   {
     id: 11,
     text: "次のコードでコンパイルエラーが発生する行はどれですか。",
-    code: "int x = 10, y = 5;          // 3行目\nif (x == 10) {}              // 4行目\nif (x != 0 | y != 0) {}     // 5行目\nif (y == 10) {}              // 6行目\nif (x == 10 and y == 5) {}   // 7行目\nif (x >= y) {}               // 8行目",
+    code: "\n\nint x = 10, y = 5;          // 3行目\nif (x == 10) {}              // 4行目\nif (x != 0 | y != 0) {}     // 5行目\nif (y == 10) {}              // 6行目\nif (x == 10 and y == 5) {}   // 7行目\nif (x >= y) {}               // 8行目",
     command: null,
     selectCount: 1,
     options: [
@@ -441,7 +441,7 @@ const questionsP3 = [
   {
     id: 28,
     text: "次のコードがあります。コンパイル、実行した結果として正しいものはどれですか。",
-    code: "public class Fruit {\n    public static void main(String[] args) {\n        Fruit[] ary = {new Fruit(), new Fruit(), new Fruit()};\n        int num = ary.length;\n        while(num > 0) {\n            System.out.print(num-- + \" \");\n        }do;\n    }\n}",
+    code: "class Fruit {\npublic static void main(String[] args) {\nFruit[] ary = {new Fruit(), new Fruit(), new Fruit()};\nint num = ary.length;\nwhile(num > 0) {\nSystem.out.print(num-- + \" \");\n}do;\n}\n}",
     command: null,
     selectCount: 1,
     options: [

@@ -428,7 +428,7 @@
     // 4) Restore
     for (var i = 0; i < phs.length; i++) {
       line = line.split('\u00ab\u00ab' + i + '\u00bb\u00bb').join(phs[i]);
-    }
+    } 
     return line;
   }
 

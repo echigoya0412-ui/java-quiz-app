@@ -100,7 +100,7 @@ const questionsP4 = [
   {
     id: 37,
     text: "コンパイル、実行した結果として正しいものはどれですか。",
-    code: "class Foo {\n    static int val;\n    static int methodA() { return ++val; }\n    int methodB() { return methodA(); }\n}\nclass Test {\n    public static void main(String[] args) {\n        Foo obj = new Foo();\n        obj.methodA();\n        int num = obj.methodB();\n        System.out.println(num);\n    }\n}",
+    code: "\nclass Foo {\n    static int val;\n    static int methodA() { return ++val; }\n    int methodB() { return methodA(); }\n}\nclass Test {\n    public static void main(String[] args) {\n        Foo obj = new Foo();\n        obj.methodA();\n        int num = obj.methodB();\n        System.out.println(num);\n    }\n}",
     command: null,
     selectCount: 1,
     options: [
