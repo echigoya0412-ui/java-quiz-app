@@ -18,7 +18,7 @@ const questionsP2 = [
   {
     id: 32,
     text: "Employee クラスのコンストラクタ定義として①に挿入できるコードを2つ選択してください。",
-    code: "public class Employee {\n    private int empId;\n    // ①\n}",
+    code: "public class Employee {\n    private int empId;\n    [①]\n}",
     command: null,
     selectCount: 2,
     options: [
@@ -207,7 +207,7 @@ const questionsP2 = [
   {
     id: 44,
     text: "①に挿入すると「MyClassB:MyClassA」と出力されるコードを選択してください。",
-    code: "class MyClassA {\n    String name = \"MyClassA\";\n}\nclass MyClassB extends MyClassA {\n    String name = \"MyClassB\";\n    void disp() {\n        System.out.println(name + \":\" + /* ① */);\n    }\n}",
+    code: "class MyClassA {\n    String name = \"MyClassA\";\n}\nclass MyClassB extends MyClassA {\n    String name = \"MyClassB\";\n    void disp() {\n        System.out.println(name + \":\" + [①]);\n    }\n}",
     command: null,
     selectCount: 1,
     options: [
@@ -224,7 +224,7 @@ const questionsP2 = [
   {
     id: 45,
     text: "①に挿入するとstr1とstr2を正しく初期化できるコードを1つ選択してください。",
-    code: "public class Bar {\n    String str1;\n    String str2;\n    String str3 = \"orange\";\n    Bar() {\n        // ①\n    }\n    Bar(String s) {\n        str2 = s;\n    }\n}",
+    code: "public class Bar {\n    String str1;\n    String str2;\n    String str3 = \"orange\";\n    Bar() {\n        [①]\n    }\n    Bar(String s) {\n        str2 = s;\n    }\n}",
     command: null,
     selectCount: 1,
     options: [
@@ -287,7 +287,7 @@ const questionsP2 = [
   {
     id: 49,
     text: "①に挿入するとコンパイルが成功するコードを選択してください。",
-    code: "abstract class MyClassA {\n    public abstract void methodA();\n    void methodB() {\n        System.out.println(\"methodB\");\n    }\n}\npublic class MyClassB extends MyClassA {\n    // ①\n}",
+    code: "abstract class MyClassA {\n    public abstract void methodA();\n    void methodB() {\n        System.out.println(\"methodB\");\n    }\n}\npublic class MyClassB extends MyClassA {\n    [①]\n}",
     command: null,
     selectCount: 1,
     options: [
@@ -319,7 +319,7 @@ const questionsP2 = [
   {
     id: 51,
     text: "①に挿入すると正常にコンパイルできるコードを2つ選択してください。",
-    code: "interface Foo {\n    // ①\n}",
+    code: "interface Foo {\n    [①]\n}",
     command: null,
     selectCount: 2,
     options: [
@@ -366,7 +366,7 @@ const questionsP2 = [
   {
     id: 54,
     text: "①に挿入すると「MyClassB:Hello」と出力されるコードを選択してください。",
-    code: "class MyClassA {\n    String str;\n}\nclass MyClassB extends MyClassA {\n    MyClassB(String str) {\n        this.str = str;\n    }\n    void show() {\n        System.out.println(\"MyClassB:\" + str);\n    }\n}\npublic class Test {\n    public static void main(String[] args) {\n        MyClassA obj = new MyClassB(\"Hello\");\n        // ①\n    }\n}",
+    code: "class MyClassA {\n    String str;\n}\nclass MyClassB extends MyClassA {\n    MyClassB(String str) {\n        this.str = str;\n    }\n    void show() {\n        System.out.println(\"MyClassB:\" + str);\n    }\n}\npublic class Test {\n    public static void main(String[] args) {\n        MyClassA obj = new MyClassB(\"Hello\");\n        [①]\n    }\n}",
     command: null,
     selectCount: 1,
     options: [
